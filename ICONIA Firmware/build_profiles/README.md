@@ -6,7 +6,7 @@
 
 | 매크로 | 의미 | dev | prod |
 |---|---|---|---|
-| `ICONIA_API_ENDPOINT` | 서버 multipart POST URL | `https://iconia.onrender.com/api/event` | `https://api.iconia.<사내>/api/event` *(교체 필요)* |
+| `ICONIA_API_ENDPOINT` | 서버 multipart POST URL | `https://iconia.onrender.com/api/event` | `https://api.iconia.ICONIA_PROD_DOMAIN_PLACEHOLDER/api/event` *(교체 필요)* |
 | `ICONIA_API_KEY` | `X-API-Key` 헤더 값 | `DEV_API_KEY_PLACEHOLDER` *(교체 필요)* | `PROD_API_KEY_PLACEHOLDER` *(교체 필요)* |
 | `ICONIA_FIRMWARE_VERSION` | 서버에 보고되는 버전 문자열 | `1.0.0-dev` | `1.0.0` |
 | `ICONIA_SERVER_ROOT_CA_PEM` | 서버 TLS 검증용 root CA bundle | ISRG Root X1 + Amazon Root CA 1 | ISRG Root X1 + Amazon Root CA 1 |
@@ -37,7 +37,7 @@ dev/prod 양쪽 모두 **ISRG Root X1 + Amazon Root CA 1 두 개를 cert chain b
 
 ### prod
 1. `build_profiles/prod.h` 열기
-2. `ICONIA_API_ENDPOINT` 의 `<사내>` 를 실제 운영 도메인으로 교체
+2. `ICONIA_API_ENDPOINT` 의 `ICONIA_PROD_DOMAIN_PLACEHOLDER` 를 실제 운영 도메인으로 교체
    - 예: `https://api.iconia.example-corp.com/api/event`
 3. `ICONIA_API_KEY` 의 `PROD_API_KEY_PLACEHOLDER` 를 실제 운영 API key 로 교체
 4. (출하 직전) 다음 두 매크로 정의 추가 검토

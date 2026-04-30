@@ -5,7 +5,7 @@
 // build_opt.h 는 .gitignore 대상이며, 본 파일이 매크로 정본이다.
 //
 // 적용 환경:
-//   - 서버 엔드포인트: https://api.iconia.<사내> (AWS ACM 발급 인증서)
+//   - 서버 엔드포인트: https://api.iconia.ICONIA_PROD_DOMAIN_PLACEHOLDER (AWS ACM 발급 인증서)
 //   - 스토리지: AWS S3
 //   - 펌웨어 버전: 정식 semver (suffix 없음)
 //   - OTA 디버그 로그 OFF (시리얼 노이즈 최소화, 정보 노출 최소화)
@@ -15,7 +15,7 @@
 //   build.bat prod          (Windows cmd)
 //
 // 첫 빌드 전 필수 작업:
-//   1) ICONIA_API_ENDPOINT 의 <사내> 부분을 실제 운영 도메인으로 교체
+//   1) ICONIA_API_ENDPOINT 의 ICONIA_PROD_DOMAIN_PLACEHOLDER 부분을 실제 운영 도메인으로 교체
 //      예: "https://api.iconia.example-corp.com/api/event"
 //   2) ICONIA_API_KEY 의 PROD_API_KEY_PLACEHOLDER 를 실제 운영 API key로 교체
 //      (운영 secrets manager 에서 발급, 절대 Git 커밋 금지)
@@ -29,8 +29,8 @@
 // -----------------------------------------------------------------------------
 // 서버 엔드포인트 / 인증
 // -----------------------------------------------------------------------------
-// TODO(prod): <사내> 자리를 실제 운영 도메인으로 교체할 것.
-#define ICONIA_API_ENDPOINT "https://api.iconia.<사내>/api/event"
+// TODO(prod): ICONIA_PROD_DOMAIN_PLACEHOLDER 자리를 실제 운영 도메인으로 교체할 것.
+#define ICONIA_API_ENDPOINT "https://api.iconia.ICONIA_PROD_DOMAIN_PLACEHOLDER/api/event"
 #define ICONIA_API_KEY      "PROD_API_KEY_PLACEHOLDER"
 
 // -----------------------------------------------------------------------------
